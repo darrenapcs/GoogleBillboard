@@ -5,7 +5,7 @@ public void setup()
     for (int i = 1; i < e.length()-10; i++) 
      {
        String digits = e.substring(i,i+10);
-       double num = Double.parseDouble(digits);
+       double dNum = Double.parseDouble(digits);
        if(isPrime(dNum)==true)
          System.out.println(dNum);
      }
@@ -18,10 +18,11 @@ public boolean isPrime(double dNum)
 {   
     //to be finished later   
     if(dNum < 2)
-     return true;
-    for(int i = 2; i <= Math.sqrt(dNum); i++;)
-     if(dNum % 2 == 0)
+     return false;
+    for(int i = 2; i <= Math.sqrt(dNum); i++)
+    {
+     if(dNum % i == 0)
       return false;
-     return true;
+   }
     return true;  
 } 
